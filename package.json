@@ -1,0 +1,54 @@
+{
+	"name": "winetoast",
+	"version": "0.0.1",
+	"description": "A physics based toast notification library for react.",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/markhker/winetoast.git"
+	},
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			},
+			"default": "./dist/index.js"
+		},
+		"./styles.css": "./dist/styles.css"
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rm -rf dist && bunchee && cp src/styles.css dist/styles.css",
+		"dev": "bunchee --watch",
+		"docs:dev": "vite --config site/vite.config.ts",
+		"docs:build": "vite build --config site/vite.config.ts",
+		"docs:preview": "vite preview --config site/vite.config.ts"
+	},
+	"peerDependencies": {
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"devDependencies": {
+		"@types/node": "^25.6.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^6.0.1",
+		"bunchee": "^6.9.4",
+		"react": "^19.2.5",
+		"react-dom": "^19.2.5",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.10"
+	},
+	"dependencies": {
+		"motion": "^12.34.0"
+	}
+}
