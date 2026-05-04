@@ -18,8 +18,14 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           registry-url: https://registry.npmjs.org
+
+      - name: Use latest npm
+        run: npm install -g npm@latest
+
+      - name: Check npm version
+        run: npm --version
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
